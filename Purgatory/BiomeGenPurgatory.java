@@ -11,7 +11,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 public class BiomeGenPurgatory extends BiomeGenBase
 {
-private WorldGenerator PurgatoryworldGeneratorBigTree;
+private WorldGenerator WorldGenPurgatoryTree;
+private Object worldGeneratorPurgatoryBigTree;
 public final Material blockMaterial;
 public BiomeGenPurgatory(int par1)
 {
@@ -35,6 +36,6 @@ this.waterColorMultiplier = 0x323232;
 */
 public WorldGenerator getRandomWorldGenForTrees(Random par1Random)
 {
-	return (WorldGenerator)(par1Random.nextInt(5) == 0 ? this.worldGeneratorForest : (par1Random.nextInt(10) == 0 ? this.worldGeneratorTrees : this.worldGeneratorTrees));
+	return (WorldGenerator)(par1Random.nextInt(5) == 0 ? this.worldGeneratorForest : (par1Random.nextInt(10) == 0 ? this.worldGeneratorForest : this.worldGeneratorTrees));
 }
 }

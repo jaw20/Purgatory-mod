@@ -10,8 +10,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.client.IRenderHandler;
 public class WorldProviderPurgatory extends WorldProvider
 {
+	IRenderHandler skyRenderer;
 	private float[] colorsSunriseSunset = new float[4];
 	public void registerWorldChunkManager()
 	{
@@ -85,7 +87,7 @@ public class WorldProviderPurgatory extends WorldProvider
 	@SideOnly(Side.CLIENT)
 	public String getSunTexture()
 	{
-	return "Purgatory:Purgatorysun";
+	return "Purgatory:Purgatorysun.png";
 	}
 	public boolean canCoordinateBeSpawn(int par1, int par2)
 	{
@@ -180,5 +182,12 @@ public class WorldProviderPurgatory extends WorldProvider
 	{
 	         return true;
 	}
+		@SideOnly(Side.CLIENT)
+        public IRenderHandler getSkyRenderer()
+        {
+                return new PurgatorySkyRenderer();
+        }
+	
 	}
+
 

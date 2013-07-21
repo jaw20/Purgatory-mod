@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 public class BlockPurgatoryFire extends BlockFire {
-	private int[] chanceToEncourageFire = new int[256];
-	private int[] abilityToCatchFire = new int[256];
+	public int[] chanceToEncourageFire = new int[256];
+	public int[] abilityToCatchFire = new int[256];
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 	public BlockPurgatoryFire(int par1)
